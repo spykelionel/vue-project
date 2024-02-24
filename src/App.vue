@@ -3,6 +3,7 @@ export default {
   data() {
     return {
       count: 0,
+      items: [{ message: "msg1" }, { message: "msg2" }],
     };
   },
   methods: {
@@ -28,6 +29,15 @@ export default {
   <button @click="increment">Count is {{ count }}</button>
   <p v-if="isCountEven">You can only see me if count is even.</p>
   <p v-else>Count is Odd</p>
+
+  <div>
+    <p>List rendering1</p>
+    <ul>
+      <li v-for="({ message }, index) in items" :key="message">
+        {{ index }} - {{ message }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style scoped>
