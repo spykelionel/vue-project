@@ -3,7 +3,10 @@ export default {
   data() {
     return {
       count: 0,
+      text: "",
+      pick: 1,
       items: [{ message: "msg1" }, { message: "msg2" }],
+      myText: "",
     };
   },
   methods: {
@@ -37,6 +40,17 @@ export default {
         {{ index }} - {{ message }}
       </li>
     </ul>
+  </div>
+
+  <div>
+    <p>Inputs</p>
+    <p>Text: {{ myText }}</p>
+    <input v-model.trim="myText" />
+  </div>
+  <div>
+    <p>{{ `Pick: ${pick}` }}</p>
+    <input type="radio" v-model="pick" :value="1" />
+    <input type="radio" v-model="pick" :value="2" />
   </div>
 </template>
 
