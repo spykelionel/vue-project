@@ -3,13 +3,11 @@ export default {
   data() {
     return {
       count: 0,
-      isEven: true,
     };
   },
   methods: {
     increment() {
       this.count++;
-      this.isEven = this.count % 2 == 0 ? true : false;
     },
   },
   mounted() {
@@ -29,6 +27,7 @@ export default {
 <template>
   <button @click="increment">Count is {{ count }}</button>
   <p v-if="isCountEven">You can only see me if count is even.</p>
+  <p v-else>Count is Odd</p>
 </template>
 
 <style scoped>
