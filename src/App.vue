@@ -18,12 +18,17 @@ export default {
   updated() {
     console.log(`Count is ${this.count}`);
   },
+  computed: {
+    isCountEven() {
+      return (this.isEven = this.count % 2 == 0 ? true : false);
+    },
+  },
 };
 </script>
 
 <template>
   <button @click="increment">Count is {{ count }}</button>
-  <p v-if="this.count % 2 == 0">You can only see me if count is even.</p>
+  <p v-if="isCountEven">You can only see me if count is even.</p>
 </template>
 
 <style scoped>
