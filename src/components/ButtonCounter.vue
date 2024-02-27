@@ -1,8 +1,9 @@
 <script>
 export default {
+  props: ["starter"],
   data() {
     return {
-      count: 0,
+      count: this.starter,
     };
   },
   methods: {
@@ -14,5 +15,8 @@ export default {
 </script>
 
 <template>
-  <button @click="increment">Count is {{ count }}</button>
+  <p>Starts at {{ starter }}</p>
+  <div style="display: block">
+    <button @click="increment">Count is {{ count }}</button>
+  </div>
 </template>

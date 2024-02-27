@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <ButtonCounter />
+  <ButtonCounter starter="3" />
 </template>
 <style scoped>
 header {
