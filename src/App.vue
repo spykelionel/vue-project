@@ -1,14 +1,21 @@
 <script>
 import ButtonCounter from "./components/ButtonCounter.vue";
+import CustomInput from "./components/CustomInput.vue";
 export default {
+  data() {
+    return {
+      text: "",
+    };
+  },
   components: {
     ButtonCounter,
+    CustomInput,
   },
 };
 </script>
 
 <template>
-  <ButtonCounter starter="3" />
+  <CustomInput v-model="text" />
 </template>
 <style scoped>
 header {
